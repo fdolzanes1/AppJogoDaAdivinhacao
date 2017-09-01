@@ -31,7 +31,7 @@ public class TelaJogo extends javax.swing.JFrame {
         Random gerador = new Random();
         sorteado = gerador.nextInt(99) + 1;
         System.out.println("Sorteado: "+sorteado);
-        tentativas = 0; 
+        tentativas = 0;
     }
 
     /**
@@ -67,6 +67,7 @@ public class TelaJogo extends javax.swing.JFrame {
         jLabel1.setText("Desenvolvido por Fabiano Dolzanes");
 
         jText_CampoNumero.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jText_CampoNumero.setForeground(new java.awt.Color(0, 51, 204));
         jText_CampoNumero.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         jLabel2.setFont(new java.awt.Font("Showcard Gothic", 1, 24)); // NOI18N
@@ -151,13 +152,19 @@ public class TelaJogo extends javax.swing.JFrame {
         //contador
         tentativas++;
         app.dica(palpite, sorteado, tentativas);
-        
+        if (palpite == sorteado) {
+            jText_CampoNumero.setEnabled(false);
+            botao_adivinha.setEnabled(false);
+        }
         jText_CampoNumero.setText("");
         jText_CampoNumero.requestFocus();
     }//GEN-LAST:event_botao_adivinhaMouseClicked
 
     private void botao_NovoJogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_NovoJogoMouseClicked
-       IniciaJogo();        
+       IniciaJogo(); 
+       jText_CampoNumero.setEnabled(true);
+       jText_CampoNumero.requestFocus();
+       botao_adivinha.setEnabled(true);
     }//GEN-LAST:event_botao_NovoJogoMouseClicked
 
     /**

@@ -15,12 +15,12 @@ public class AppJogoDaAdivinhacao {
 
     public void dica(int palpite, int numero, int tentativas){
         if(palpite > numero){
-            System.out.println("Seu palpite é MAIOR que o número sorteado.");
-            JOptionPane.showMessageDialog(null, "Seu palpite é MAIOR que o número sorteado.");
+            System.out.println("Dica: O número sorteado é MENOR");
+            JOptionPane.showMessageDialog(null, "Dica: O número sorteado é MENOR");
         } else {
             if(palpite < numero){
-                    System.out.println("Seu palpite é MENOR que o número sorteado.");
-                    JOptionPane.showMessageDialog(null, "Seu palpite é MENOR que o número sorteado.");
+                    System.out.println("Dica: O número sorteado é MAIOR");
+                    JOptionPane.showMessageDialog(null, "Dica: O número sorteado é MAIOR");
             } else {
                 System.out.println("Parabéns, você acertou! O número era " + numero);
                 System.out.println("Você tentou " + tentativas + " vezes antes de acertar!");
